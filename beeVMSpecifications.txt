@@ -1,0 +1,9 @@
+----------------------------------
+getObject[Type]Property( ObjectName , PropertyName )
+getObject[Type]ScriptProperty ( ObjectName , ScriptName , ScriptPropertyName )
+----------------------------------
+setObject[Type]Property( ObjectName , PropertyName , Value )
+setObject[Type]ScriptProperty( ObjectName , ScriptName , PropertyName , Value )
+----------------------------------
+sendMessage( ObjectName , MessageName , ... Args )
+----------------------------------

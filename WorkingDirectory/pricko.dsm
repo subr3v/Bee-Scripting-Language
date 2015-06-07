@@ -1,0 +1,50 @@
+Bee Decompiler
+Decompiling Bee Script Version : 0
+Globals : 
+Constants : 
+Constant 0 : True
+Constant 1 : False
+Constant 2 : lecca.bee
+Constant 3 : Ciao
+Constant 4 : losanna
+Constant 5 : 50
+Constant 6 : 0
+Constant 7 : 49
+Constant 8 : 1
+Constant 9 : 2
+Constant 10 : 4
+Constant 11 : 100
+Constant 12 : 10
+Constant 13 : Wow
+Constant 14 : 5
+Constant 15 : trace
+Instructions : 
+MAKELOCAL            5 0 0
+MOVE                 4 4 0
+MOVE                 4 4 0
+LOADCONST            9 4	;"2"
+MOVE                 4 2 0
+LOADCONST            10 4	;"4"
+MOVE                 4 3 0
+LOADCONST            11 4	;"100"
+MOVE                 4 4 0
+LOADCONST            6 4	;"0"
+MOVE                 4 4 0
+LOADCONST            12 5	;"10"
+GREATER              5 4 4
+JUMPIF               4 2
+JUMP                 10
+LOADCONST            13 4	;"Wow"
+SETCOMMON            4 0 0
+LOADCONST            5 0	;"50"
+NATIVE_CALL          0 1 0
+MOVE                 0 4 0
+LOADCONST            8 5	;"1"
+ADD                  4 5 4
+MOVE                 4 4 0
+JUMP                 -12
+LOADCONST            6 4	;"0"
+LOADCONST            14 5	;"5"
+ADD                  4 5 4
+MOVE                 4 0 0
+RETURN               0 0 0

@@ -1,0 +1,5 @@
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeVM\bin\Debug\BeeVM.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeVM\bin\Debug\BeeVM.pdb
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeVM\obj\Debug\BeeVM.csprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeVM\obj\Debug\BeeVM.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeVM\obj\Debug\BeeVM.pdb

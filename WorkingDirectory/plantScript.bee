@@ -1,0 +1,41 @@
+var plantUnlocked = false
+
+function main () 
+{
+	local plantType = @getStringProperty("LinkedPlantName")
+	local teleportSpot = @getStringProperty("TeleportSpot")
+	while( true )
+	{
+		if( !plantUnlocked )
+		{
+			checkPlantUnlock();
+		}
+
+		local otherunlocked = @getEntityBoolScriptValue(plantName, "plantUnlocked");
+		
+		//We could eliminate getScript and put some dedicated api stuff like getScriptBoolProperty.
+		else if ( @getEntity( plantType ).@getScript().@getBoolProperty("plantUnlocked") )
+		{
+			if ( @isAction() )
+			{
+				@getEntity( "Player" ).@teleport( teleportSpot );
+			}
+		}
+		yield;
+	}
+}
+
+// Complex or simple plant activation routine..
+function checkPlantUnlock ()
+{
+	// Simple
+	if( @isAction() )
+	{
+		plantUnlocked = true;
+	}
+	//Complex
+	if ( @isAction() && @getEntity("Player").@isType("PallotteroPiantogeno") && @getEntityIntPropertyValue("Player","Energy") > 50 )
+	{
+		plantUnlocked = true;
+	}
+}

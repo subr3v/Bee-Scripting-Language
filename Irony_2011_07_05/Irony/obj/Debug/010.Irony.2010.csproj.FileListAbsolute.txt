@@ -1,0 +1,8 @@
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\bin\Debug\Irony.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\bin\Debug\Irony.pdb
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\010.Irony.2010.csprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\Irony.Microsoft.MathResources.resources
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\Irony.Resources.resources
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\010.Irony.2010.csproj.GenerateResource.Cache
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\Irony.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\Irony_2011_07_05\Irony\obj\Debug\Irony.pdb

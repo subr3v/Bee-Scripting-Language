@@ -1,0 +1,9 @@
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\BeeCompiler.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\BeeCompiler.pdb
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\BeeVM.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\Irony.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\BeeVM.pdb
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\bin\Debug\Irony.pdb
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\obj\Debug\BeeCompiler.csprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\obj\Debug\BeeCompiler.dll
+C:\Users\Stefano\Desktop\AbandonRepo\AbandonProject\Abandon\BeeVM\BeeCompiler\obj\Debug\BeeCompiler.pdb

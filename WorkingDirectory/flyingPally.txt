@@ -1,0 +1,26 @@
+
+var FlowRight = 0;
+var FlowLeft = 1;
+var FlowUp = 2;
+var FlowDown = 3;
+
+var standardGravity = 9;
+
+function main ()
+{
+	while ( true )
+	{
+		if ( @isColliding("AirFlow") )
+		{
+			//null gravity
+			@setGravity(0);
+			@getCollidedName()
+			@moveAngle( @getEntityIntPropertyValue( @getCollidedName() , "FlowDirection" ) );
+		}
+		else
+		{
+			@setGravity( standardGravity );
+		}
+		yield;
+	}
+}

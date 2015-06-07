@@ -1,0 +1,19 @@
+include "lecca.bee";
+
+var ciccio = 2;
+var lozainoevuoto = "Ciao";
+var overload = ciccio;
+var kingfucka = 50 + 0 + 49 + 1;
+
+function Name ( a , b )
+{
+	local fizz = 4;
+	grok = 1 + (2 + 3) + 4;
+	blameMeAndBrickMyWii( grok );
+} 
+
+function blameMeAndBrickMyWii ( xortippo )
+{
+	local sgraccami = 0;
+	@MiChiamoFrancescoLol();
+}

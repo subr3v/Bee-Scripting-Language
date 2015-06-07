@@ -1,0 +1,78 @@
+Bee Decompiler
+Decompiling Bee Script Version : 0
+Globals : 
+Constants : 
+Constant 0 : True
+Constant 1 : False
+Constant 2 : lecca.bee
+Constant 3 : Ciao
+Constant 4 : losanna
+Constant 5 : 50
+Constant 6 : 0
+Constant 7 : 49
+Constant 8 : 1
+Constant 9 : 100
+Constant 10 : 4
+Constant 11 : 2
+Constant 12 : 3
+Constant 13 : 5
+Constant 14 : 6
+Constant 15 : 10
+Constant 16 : Wow
+Constant 17 : trace
+Instructions : 
+MAKELOCAL            8 0 0
+LOADCONST            8 5	;"1"
+MOVE                 5 1 0
+LOADCONST            6 5	;"0"
+MOVE                 5 2 0
+LOADCONST            9 5	;"100"
+MOVE                 5 3 0
+LOADCONST            10 5	;"4"
+LOADCONST            11 6	;"2"
+MULTIPLY             5 6 5
+LOADCONST            12 6	;"3"
+LOADCONST            10 7	;"4"
+MULTIPLY             6 7 6
+ADD                  5 6 5
+LOADCONST            10 6	;"4"
+LOADCONST            13 7	;"5"
+ADD                  6 7 6
+LOADCONST            10 7	;"4"
+LOADCONST            14 8	;"6"
+ADD                  7 8 7
+MULTIPLY             6 7 6
+MULTIPLY             5 6 5
+MOVE                 5 4 0
+LOADCONST            6 5	;"0"
+MOVE                 5 3 0
+MOVE                 3 5 0
+LOADCONST            15 6	;"10"
+GREATER              6 5 5
+JUMPIF               5 2
+JUMP                 21
+MOVE                 2 5 0
+LOADCONST            11 6	;"2"
+ADD                  5 6 5
+MOVE                 5 2 0
+LOADCONST            16 5	;"Wow"
+SETCOMMON            5 0 0
+LOADCONST            17 0	;"trace"
+NATIVE_CALL          0 1 0
+MOVE                 0 5 0
+MOVE                 1 5 0
+LOADCONST            11 6	;"2"
+MULTIPLY             5 6 5
+MOVE                 5 1 0
+MOVE                 1 5 0
+YIELD                5 0 0
+MOVE                 3 5 0
+LOADCONST            8 6	;"1"
+ADD                  5 6 5
+MOVE                 5 3 0
+JUMP                 -24
+LOADCONST            6 5	;"0"
+LOADCONST            13 6	;"5"
+ADD                  5 6 5
+MOVE                 5 0 0
+RETURN               0 0 0

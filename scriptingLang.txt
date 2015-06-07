@@ -1,0 +1,160 @@
+Scripting doc "Bee" Documentation :
+	Variable Scope :
+		- Global
+		- Local
+	Variable Types :
+		- String
+		- Bool
+		- Int
+		- ObjRef
+	Operations :
+		- Equality
+		- Greater/Less
+		- Copy
+		- Jump?
+		- JumpIfTrue?
+		- JumpIfFalse?
+		- NegateBool
+		- Add
+		- Subtract
+		- Multiply
+		- Divide
+		- CallNative con this
+		- TipoFunzione
+	Examples :
+		- DataContext
+		{
+			const Base = 0
+			const Gocce = 1
+			const Umido = 2
+			const Pianta = 3
+			const FinishState = 4
+			
+			var currState = Base
+			var collided = false
+			
+			START
+			{
+			}
+			END
+			
+			LABEL : StateMachine
+			{
+				var 
+				
+				if ( currState == Base )
+				{
+					BaseStateFunc()
+				}
+				
+				JumpIf ( BaseState , currState == Base )
+				JumpIf ( GocceState , currState == Gocce )
+				JumpIf ( UmidoState , currState == Umido )
+				JumpIf ( PiantaState , currState == Pianta )
+				JumpIf ( Finish , currState == FinishState )
+			}
+			LABEL : BaseState
+			{
+				CallNative( EnableDropGrab )
+				Wait ( 1000 )
+				currState = Gocce
+				JumpIf ( StateMachine , CanExecute )
+			}
+			LABEL : GocceState
+			{
+				var CollectedDrops = @GetCollectedDrops()
+				JumpIfFalse ( StateMachine , @HasCollided() )
+				JumpIfFalse ( StateMachine , @HasAction() )
+				JumpIfFalse ( StateMachine , CollectedDrops == 5 )
+				@PlayAnimation( "Seme" , "semeloto_movB" )
+				@DiePlayer ( 0.4 , 4 , false , 2.5 )
+				currState = Umido
+				JumpIf ( StateMachine , CanExecute ) // da definire
+			}
+			LABEL : UmidoState
+			{
+				var Collided = CallNative ( HasCollided )
+				var Action = CallNative ( HasAction )
+				JumpIfFalse ( StateMachine , Collided )
+				JumpIfFalse ( StateMachine , Action )
+				CallNative ( PlayAnimation , "Seme" , "semeloto_movc" )
+				CallNative ( DiePlayer , 0.4 , 10 , false , 2.5 )
+				currState = Pianta
+				Wait ( 1000 )
+				JumpIf ( StateMachine , CanExecute )
+			}
+			LABEL : PiantaState
+			{
+				var Collided = CallNative ( HasCollided )
+				var Action = CallNative ( HasAction )
+				var IsPallottero = CallNative ( IsPlayer , "Pallottero" )
+				JumpIfFalse ( StateMachine , Collided )
+				JumpIfFalse ( StateMachine , Action )
+				JumpIfFalse ( StateMachine , IsPallottero )
+				CallNative ( PlayAnimation , "Seme" , "semeloto_movD" )
+				CallNative ( FadePlayer , 0.2 , 8 )
+				CallNative ( SetPlayerActive , false )
+				Wait ( 8000 )
+				CallNative ( ConfigurePlayer , "PallotteroGambe" )
+				CallNative ( SetPlayerActive , true )
+				currState = FinishState
+				JumpIf ( StateMachine , CanExecute )
+			}
+			
+			LABEL : Finish
+			{
+				RETURN
+			}
+		}
+		
+		DEFINITIONS :
+			Program Counter is the pointer to the current instruction
+			Maximum 3 register indicator on instruction.
+			Maximum 250 ids
+		OPCODES 23 opcodes :
+			MAKEGLOBAL ( GLBID )
+				Makes a global variable with GLBID id.
+			MAKELOCAL ( LOCLID )
+				Makes a local variable with LOCLID id.
+			LOADCONST ( R , CONSTID )
+				Loads a constant CONSTID in the register R 
+			LOADGLOBAL ( R , GLBID )
+				Loads a global in the register R 
+			LOADLOCAL ( R , LOCLID )
+				Loads a local in the register R 
+			LOADSTRING ( R , STRINGID )
+				Loads a string in the register R 
+			SAVEGLOBAL ( R , GLBID )	
+				Saves the value in the register R  in the global GLBID
+			SAVELOCAL ( R , LOCALID)
+				Saves the value in the register R  in the local LOCALID
+			SAVESTRING ( R , STRINGID )
+				Saves the value in the register R  in the string STRINGID
+			RETURN 
+				Ends script execution if the stack depth is 0
+				Puts program counter to the popped stack counter
+			PUSHPC ( )
+				Pushes in the stack the current PC and creates a new scope and saves current scope
+			POPPC ( A )
+				Pops in A the current PC and deletes the current scope
+			JUMP ( Offset )
+				Jumps to PC + Offset
+			MOVE ( A , B )
+				Copy value in register B to a
+			JUMPIF ( A , Offset )
+				Jumps to PC + Offset if A is true
+			NEGATE ( A , B )
+				Puts in A register B negated as bool
+			GREATERTHAN ( A , B , C )
+				Puts true in C if A > B , else put false
+			EQUAL ( A , B , C )
+				Puts C true if A == B , else false
+			ADD ( A , B , C )
+				Puts in C : A + B
+			SUBTRACT ( A , B , C )
+				PUTS in C : A - B
+			MULTIPLY ( A , B , C )
+				PUTS in C : A * B
+			DIVIDE ( A , B , C )
+				PUTS in C : A / B
+			

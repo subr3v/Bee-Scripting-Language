@@ -1,0 +1,106 @@
+
+Program :== IncludeStatements VariableStatements FunctionDefinitions
+
+IncludeStatements :== IncludeStatement*
+VariableStatements :== VariableStatement*
+FunctionDefinitions :== FunctionDefinition+
+
+IncludeStatement :== "include" String
+VariableStatement :== "var" Identifier AssignmentOp Expression
+
+
+a = ( 5 + (4 * (3 + 2) ) )
+a = 5 + 4 * 3 + 2 
+
+a = 1 + 2 + 3
+
+Term :== Number | String | Constant | Identifier | ParExpr
+ParExpr :== "(" Expression ")"
+AssignmentOp :== "="
+Expression :== Term | FunctionCall | NativeFunctionCall | BinaryExpression | UnaryExpression
+BinaryExpression :== Expression BinaryOp Expression
+UnaryExpression :== UnaryOperator Expression
+FunctionCall :== Identifier "(" ArgumentList ")
+ArgumentList :== Expression * separator ","
+NativeFunctionCall :== "@" Identifier + "(" ArgumentList ")"
+BinaryOp :== "+" | "-" | "*" | "/"
+UnaryOp :== "!" | "-"
+
+FunctionDefinition :== "function" Identifier "(" FunctionSignature ")" "{" LocalStatements InstructionStatements "}"
+LocalStatements :== LocalStatement*
+LocalStatement :== "local" Identifier AssignmentOp Expression
+FunctionSignature :== Identifier* separator ","
+
+InstructionStatements :== IntructionStatement * separator ";"
+InstructionStatement :== AssignmentStatement | FunctionCall | NativeFunctionCall | IfStatement | IfElseStatement | WhileStatement | ForStatement
+AssignmentStatement :== Identifier AssignmentOp Expression
+
+IfStatement :== "if" "(" Expression ")" "{" InstructionStatements "}"
+IfElseStatement :== "if" "(" Expression ")" "{" InstructionStatements "}" "else" "{" InstructionStatements "}"
+
+WhileStatement :== "while" "(" Expression ")" "{" InstructionStatements "}"
+ForStatement :== "for" "(" AssignmentStatement ";" Expression ";" AssignmentStatement ")" "{" InstructionStatements "}"
+
+#licco "movs.bee"
+
+IncludeStatements
+
+VariableStatements
+
+FunctionDefinitions
+
+
+function main () 
+{
+	variableStatements
+
+}
+
+
+// Comment
+local variable = 5; // local creation and assign
+local a; // Invalid only creation 
+var globby = 5 // global creation and assign
+var globby ; // invalid only creation
+
+if ( expr )
+{
+	statementList
+}
+else
+{
+	statementList
+}
+
+while ( expr )
+{
+	statementList
+}
+
+for ( variable ; expr ; statement )
+{
+	statementList
+}
+
+SWITCH O STATEFUL??
+switch ( variable )
+{
+	case variable/const :
+		statementList
+		break;
+	...
+}
+
+Stateful( variable )
+{
+	State ( variable/const )
+	{
+		statementList
+	}
+	...
+}
+
+function [RetType?] NameFunc ( ArgList )
+{
+	statementList
+}
